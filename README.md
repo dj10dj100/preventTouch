@@ -15,23 +15,23 @@ Basic Example
 --------------------
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="preventTouch.js"> </script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="preventTouch.js"> </script>
 
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
 
 
-```javascript
-	$(document).ready(function(){
-		$('.test').preventTouch({
-				ios : true
+	```javascript
+		$(document).ready(function(){
+			$('.test').preventTouch({
+					ios : true
+			});
 		});
-	});
-```
+	```
 
 All elements with .test class will need to be pressed twice on an ios device.
 
@@ -40,13 +40,14 @@ Options v1.0
 --------------------
 
 <b> For window resizing </b>
-```javascript
-	$('.test').preventTouch({
-		ios : true,
-		android : true,
-		blackberry : true,
-		windows : true,
-		opera : true,
-		any : true
-	});
-```
+
+	```javascript
+		$('.test').preventTouch({
+			ios : true,
+			android : true,
+			blackberry : true,
+			windows : true,
+			opera : true,
+			any : true
+		});
+	```
