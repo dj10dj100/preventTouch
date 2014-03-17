@@ -1,0 +1,16 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="preventTouch.js"> </script>
+<h1 class="test">preventTouch</h1>
+
+
+
+<script> 
+	$(document).ready(function(){
+		$('.test').preventTouch({
+				any :true,
+				android :true,
+				blackberry :true,
+				ios :true
+			});
+	});
+</script>
