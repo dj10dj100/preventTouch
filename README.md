@@ -33,13 +33,13 @@ Basic Example
 	});
 ```
 
-All elements with .test class will need to be pressed twice on an ios device.
+All elements with <b>.test</b> class will need to be pressed twice on an ios device.
 
 --------------------
 Options v1.0
 --------------------
 
-<b> For window resizing </b>
+<b> You can spec what devices to make the plugin run on if needs be </b>
 
 ```javascript
 	$('.test').preventTouch({
