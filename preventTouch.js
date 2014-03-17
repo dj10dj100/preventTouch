@@ -1,56 +1,51 @@
 (function($) {
 
-    var methods = {
+    $.fn.preventTouch = function(options) {
 
-        settings: {},
+        var device = {
 
-        init: function(options) {
-
-            /* Any Mobile Device Specced */
-            if (options['any'] == true && methods.any()) {
-                methods.plugin();
-            } else {
-                if (options['android'] == true && methods.android() || options['ios'] == true && methods.ios() || options['blackberry'] == true && methods.blackBerry() || options['ios'] == true && methods.opera() || options['windows'] == true && methods.windows()) {
-                    methods.plugin();
-                }
+            android: function() {
+                return navigator.userAgent.match(/Android/i);
+            },
+            blackBerry: function() {
+                return navigator.userAgent.match(/BlackBerry/i);
+            },
+            ios: function() {
+                return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+            },
+            opera: function() {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+            windows: function() {
+                return navigator.userAgent.match(/IEMobile/i);
+            },
+            any: function() {
+                return (methods.android() || methods.blackBerry() || methods.ios() || methods.opera() || methods.windows());
             }
-
-        },
-        android: function() {
-            return navigator.userAgent.match(/Android/i);
-        },
-        blackBerry: function() {
-            return navigator.userAgent.match(/BlackBerry/i);
-        },
-        ios: function() {
-            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        },
-        opera: function() {
-            return navigator.userAgent.match(/Opera Mini/i);
-        },
-        windows: function() {
-            return navigator.userAgent.match(/IEMobile/i);
-        },
-        any: function() {
-            return (methods.android() || methods.blackBerry() || methods.ios() || methods.opera() || methods.windows());
-        },
-        plugin: function() {
-            console.log('rung plugin');
-
-            $('')
-
         }
 
-    };
+        //store defaults().
+        var settings = $.extend({}, options);
 
-    $.fn.preventTouch = function(methodOrOptions) {
+        //store constant current device
+        var CURRENT_DEVICE = device;
 
-        if (methods[methodOrOptions]) {
-            return methods[methodOrOptions].apply(this, Array.prototype.slice.call(arguments, 1));
-        } else if (typeof methodOrOptions === 'object' || !methodOrOptions) {
-            return methods.init.apply(this, arguments);
-        } else {
-            $.error('Method ' + methodOrOptions + ' does not exist.');
+        if (settings['any'] == true && CURRENT_DEVICE.any() || settings['android'] == true && CURRENT_DEVICE.android() || settings['ios'] == true && CURRENT_DEVICE.ios() || settings['blackberry'] == true && CURRENT_DEVICE.blackBerry() || settings['ios'] == true && CURRENT_DEVICE.opera() || settings['windows'] == true && CURRENT_DEVICE.windows()) {
+
+            return this.each(function() {
+
+                $(this).data('touched', false);
+
+                $(this).click(function(e) {
+
+                    if ($(this).data('touched') == true) {
+                        return true;
+                    } else {
+                        $(this).data('touched', true);
+                        e.preventDefault();
+                    }
+                });
+            });
         }
     };
 
