@@ -1,8 +1,8 @@
 jQuery preventTouch
 ===========
-v1.0
-@Author Daniel Jenkins
-@Licence : Open source, go for it.
+<p>v1.0</p>
+<p>@Author Daniel Jenkins</p>
+<p>@Licence : Open source, go for it.</p>
 
 I ran into a problem recently - hover states on mobile devices. We've all built those awesome html dropdowns that work so nicely with "mouseover" or even mobile menus with pure html & css wizadry. 
 
@@ -14,7 +14,7 @@ This plugin solves that..
 Basic Example
 --------------------
 
-```
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="preventTouch.js"> </script>
 
