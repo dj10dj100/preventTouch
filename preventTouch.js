@@ -6,10 +6,14 @@
 
         init: function(options) {
 
-            if (options.any == true && methods.any() == true) {
-                console.log('any mobile device');
+            /* Any Mobile Device Specced */
+            if (options['any'] == true && methods.any()) {
+                methods.plugin();
+            } else {
+                if (options['android'] == true && methods.android() || options['ios'] == true && methods.ios() || options['blackberry'] == true && methods.blackBerry() || options['ios'] == true && methods.opera() || options['windows'] == true && methods.windows()) {
+                    methods.plugin();
+                }
             }
-
 
         },
         android: function() {
@@ -29,6 +33,12 @@
         },
         any: function() {
             return (methods.android() || methods.blackBerry() || methods.ios() || methods.opera() || methods.windows());
+        },
+        plugin: function() {
+            console.log('rung plugin');
+
+            $('')
+
         }
 
     };
