@@ -15,14 +15,14 @@ Basic Example
 --------------------
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="preventTouch.js"> </script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="preventTouch.js"> </script>
 
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
-<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
+	<a class="test" href="#tested">preventTouch</a>
 
 
 ```javascript
@@ -33,13 +33,14 @@ Basic Example
 	});
 ```
 
-All elements with .test class will need to be pressed twice on an ios device.
+All elements with <b>.test</b> class will need to be pressed twice on an ios device.
 
 --------------------
 Options v1.0
 --------------------
 
-<b> For window resizing </b>
+<b> You can spec what devices to make the plugin run on if needs be </b>
+
 ```javascript
 	$('.test').preventTouch({
 		ios : true,
