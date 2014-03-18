@@ -1,3 +1,10 @@
+/**
+ * jQuery preventTouch.js
+ * Use this on html elements that require a hover state on mobile devices.
+ * Author: Daniel Jenkins
+ * Licence: GNU (GPL)
+ * Visit: http://www.daniel-jenkins.com for more.
+ */
 (function($) {
 
     $.fn.preventTouch = function(options) {
