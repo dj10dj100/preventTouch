@@ -19,6 +19,15 @@
             ios: function() {
                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
             },
+            iPhone: function() {
+                return navigator.userAgent.match(/iPhone/i);
+            },
+            iPad: function() {
+                return navigator.userAgent.match(/iPad/i);
+            },
+            iPod: function() {
+                return navigator.userAgent.match(/iPod/i);
+            },
             opera: function() {
                 return navigator.userAgent.match(/Opera Mini/i);
             },
