@@ -1,4 +1,8 @@
-# jQuery preventTouch
+[![npm](https://img.shields.io/npm/dm/prevent-touch.svg)]()
+[![npm](https://img.shields.io/npm/dt/prevent-touch.svg)]()
+[![npm](https://img.shields.io/npm/v/prevent-touch.svg)]()
+
+# <a href="https://github.com/dj10dj100/preventTouch">jQuery prevent-touch</a>
 ===========
 
 Hover states on mobile devices can be tricky and this is just another module designed to help with building touch ready interfaces with web technologies .
