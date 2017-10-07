@@ -1,0 +1,27 @@
+{
+  "name": "prevent-touch",
+  "version": "1.0.0",
+  "description": "jQuery plugin to help prevent instant navigation on touch enabled device, great for css styled dropdowns/hover states",
+  "main": "prevent-touch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dj10dj100/preventTouch.git"
+  },
+  "keywords": [
+    "jquery",
+    "prevent",
+    "touch",
+    "mobile",
+    "tablet",
+    "hover"
+  ],
+  "author": "dj10dj100",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dj10dj100/preventTouch/issues"
+  },
+  "homepage": "https://github.com/dj10dj100/preventTouch#readme"
+}

@@ -1,40 +1,31 @@
-/**
- * jQuery preventTouch.daniel-jenkins
- * Author: Daniel Jenkins
- * Licence: GNU (GPL)
- * Visit: http://www.daniel-jenkins.com for more.
- */
-(function($) {
-
-    $.fn.preventTouch = function(options) {
-
+(function ($) {
+    $.fn.preventTouch = function (options) {
         var device = {
-
-            android: function() {
+            android: function () {
                 return navigator.userAgent.match(/Android/i);
             },
-            blackBerry: function() {
+            blackBerry: function () {
                 return navigator.userAgent.match(/BlackBerry/i);
             },
-            ios: function() {
+            ios: function () {
                 return navigator.userAgent.match(/iPhone|iPad|iPod/i);
             },
-            iPhone: function() {
+            iPhone: function () {
                 return navigator.userAgent.match(/iPhone/i);
             },
-            iPad: function() {
+            iPad: function () {
                 return navigator.userAgent.match(/iPad/i);
             },
-            iPod: function() {
+            iPod: function () {
                 return navigator.userAgent.match(/iPod/i);
             },
-            opera: function() {
+            opera: function () {
                 return navigator.userAgent.match(/Opera Mini/i);
             },
-            windows: function() {
+            windows: function () {
                 return navigator.userAgent.match(/IEMobile/i);
             },
-            any: function() {
+            any: function () {
                 return (device.android() || device.blackBerry() || device.ios() || device.opera() || device.windows());
             }
         }
@@ -45,15 +36,20 @@
         //store constant current device
         var CURRENT_DEVICE = device;
 
-        if (settings['any'] == true && CURRENT_DEVICE.any() || settings['android'] == true && CURRENT_DEVICE.android() || settings['ios'] == true && CURRENT_DEVICE.ios() || settings['blackberry'] == true && CURRENT_DEVICE.blackBerry() || settings['ios'] == true && CURRENT_DEVICE.opera() || settings['windows'] == true && CURRENT_DEVICE.windows()) {
+        if (settings['any'] && CURRENT_DEVICE.any()
+            || settings['android'] && CURRENT_DEVICE.android()
+            || settings['ios'] && CURRENT_DEVICE.ios()
+            || settings['blackberry'] && CURRENT_DEVICE.blackBerry()
+            || settings['ios'] && CURRENT_DEVICE.opera()
+            || settings['windows'] && CURRENT_DEVICE.windows()) {
 
-            return this.each(function() {
+            return this.each(function () {
 
                 $(this).data('touched', false);
 
-                $(this).click(function(e) {
+                $(this).click(function (e) {
 
-                    if ($(this).data('touched') == true) {
+                    if ($(this).data('touched')) {
                         return true;
                     } else {
                         $(this).data('touched', true);

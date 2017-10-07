@@ -1,53 +1,52 @@
-jQuery preventTouch
+# jQuery preventTouch
 ===========
-<p>v1.0</p>
-<p>@Author Daniel Jenkins</p>
-<p>@Licence : Open source, go for it.</p>
 
-I ran into a problem recently - hover states on mobile devices. We've all built those awesome html dropdowns that work so nicely with "mouseover" or even mobile menus with pure html & css wizadry. 
+Hover states on mobile devices can be tricky and this is just another module designed to help with building touch ready interfaces with web technologies .
 
-Well what happens when you need to use a touch enabled device for these or have a sub navigation on that HTML markup? You click the parent element and oopsy, the browsers already moved to that page. Never allowing the user to open up that juicy sub-navigation.
+This plugin is designed to help with preventing the initial navigation on a href when there is a hover state applied with css. Unique I know, but these things happen...
+Also, there is plenty of other ways to solve the problems this could solve, not using `<a>` tags with css state etc.
 
-This plugin solves that..
+This is a jQuery plugin, so there is a hard dependency on jQuery being available in the current scope. 
 
+
+```javascript
+import 'prevent-touch';
+```
 --------------------
 Basic Example
 --------------------
 
+``` html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="preventTouch.js"> </script>
-
-	<a class="test" href="#tested">preventTouch</a>
-	<a class="test" href="#tested">preventTouch</a>
-	<a class="test" href="#tested">preventTouch</a>
-	<a class="test" href="#tested">preventTouch</a>
-	<a class="test" href="#tested">preventTouch</a>
-
+<a class="test" href="#tested">preventTouch</a>
+<a class="test" href="#tested">preventTouch</a>
+<a class="test" href="#tested">preventTouch</a>
+<a class="test" href="#tested">preventTouch</a>
+<a class="test" href="#tested">preventTouch</a>
+```
 
 ```javascript
-	$(document).ready(function(){
-		$('.test').preventTouch({
-				ios : true
-		});
+	$('.test').preventTouch({
+		ios : true
 	});
 ```
 
-All elements with <b>.test</b> class will need to be pressed twice on an ios device.
+All elements with <b>.test</b> class will need to be pressed twice for the navigation to happenon an ios device.
 
 --------------------
-Options v1.0
+## Options
 --------------------
 
 <b> You can spec what devices to make the plugin run on if needs be </b>
 
 ```javascript
-	$('.test').preventTouch({
-		ios : true,
-		android : true,
-		blackberry : true,
-		windows : true,
-		opera : true,
-		any : true
-	});
+$('.test').preventTouch({
+    ios : true,
+    android : true,
+    blackberry : true,
+    windows : true,
+    opera : true,
+    any : true
+});
 ```
